@@ -1,27 +1,27 @@
 
-user_num = (int(input("Please think of a number between 0 and 100! ")))
+user_num = (int(input("Please think of a number between 0 and 100! "))) # poidu putem binarnogo poiska
 
-low = 0
-high = 100
+low = 0 # nijnyaa graniza
+high = 100 # verhnyaya graniza
 
-ans = (high + low)//2
-print("is your secret number " + str(ans))
+ans = (high + low)//2 # mid
+print("is your secret number " + str(ans)) # prevrashaem otvet v stroku
 
 check_ans = input("""enter 'h' to indicate if the guess is too high. 
     enter 'l' to indicate if the guess is too low. 
-    enter 'c' if I guessed correctly.""")
+    enter 'c' if I guessed correctly.""") 
 
-while True: 
+while True: #bulevii poisk
         
-    if check_ans == 'h':
-        high = ans
-        ans = (high + low)//2
-        print("is your secret number " + str(ans))
+    if check_ans == 'h': #esli nomer bolshoi
+        high = ans 
+        ans = (high + low)//2 # prodlojaem iskat v oblasti, kotoraya sokrashena
+        print("is your secret number " + str(ans)) # sled otvet
         check_ans = input("""enter 'h' to indicate if the guess is too high. 
         enter 'l' to indicate if the guess is too low. 
-        enter 'c' if I guessed correctly.""")
+        enter 'c' if I guessed correctly.""") # vozvrat k while
     
-    elif check_ans == 'l':
+    elif check_ans == 'l': #no,er nije zagadannogo
         low = ans
         ans = (high + low)//2
         print("is your secret number " + str(ans))
@@ -30,9 +30,9 @@ while True:
         enter 'c' if I guessed correctly.""")
     elif check_ans == 'c':
         print("Game over. Your secret number was: " + str(ans)) 
-        break;
+        break; #prekrashaem poisk posle poluchenia pravilnogo otveta
     else:
-        print("I do not understand your command")
+        print("I do not understand your command") # v tom sluchae esli zavedena drugaya bukva
         print("is your secret number " + str(ans))
         check_ans = input("""enter 'h' to indicate if the guess is too high. 
         enter 'l' to indicate if the guess is too low. 
